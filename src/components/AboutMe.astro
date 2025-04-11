@@ -1,0 +1,187 @@
+---
+import skills from "../data/skills.json";
+import Link from "./Link.astro";
+
+type skillFormat = {
+  category: string;
+  icon: string;
+  tools: string[];
+};
+
+const skillData: skillFormat[] = skills;
+---
+
+<section>
+  <div class="about">
+    <div class="slice">
+      <div class="info">
+        <h1 class="name">Jade Sagayap</h1>
+        <p class="description">
+          I am Jade, a web developer and designer from the Philippines who loves building beautiful designs and experiences. 
+          I graduated from the Technological Institute of the Philippines with a bachelor's degree in Information Technology, specializing Cybersecurity.
+          Having a passion for design for most of my life through self-study and experimentation,
+          my goal is to create designs that people like and improve my skills as I explore more of this field.
+        </p>
+        <p class="description">
+          Besides my main expertise, I do other fields such as cybersecurity, system administration, software development, and game design.
+        </p>
+        <p class="description">
+          When I'm bored, I play video games, watch anime, or read manga. Always with a cup of coffee ☕
+        </p>
+      </div>
+      <div class="skills">
+        <h2 class="subheader">Skills</h2>
+        <div class="skills-wrapper">
+          {
+            skillData.map((category) => (
+              <div class="skill-area">
+                <div class="skill-category">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                    <path fill="currentColor" d={category.icon}></path>
+                  </svg>
+                  <p class="skill-category-title">{category.category}</p>
+                </div>
+                <div class="skill-tags">
+                  {
+                    category.tools.map((tool) => (
+                      <div class="skill">{tool}</div>
+                    ))
+                  }
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="contact">
+        <h2 class="subheader">Contact</h2>
+        <p class="description">
+          If you have any questions or inquiries, feel free to contract me through my email <Link href="mailto:mail@jsagayap.com" bold={true}>mail@jsagayap.com</Link>
+          or chat me on <Link href="https://www.linkedin.com/in/jsagayap" bold={true}>LinkedIn.</Link>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+  .slice {
+    box-sizing: border-box;
+  }
+  .slice:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .slice:nth-child(2) {
+    width: 40%;
+    display: flex;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .name {
+    font-size: 3rem;
+    margin: 0;
+  }
+  .description {
+    margin: 0;
+    line-height: 1.75;
+  }
+  .subheader {
+    margin-top: 0;
+  }
+  .skills-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .skill-area {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, .075);
+    border-radius: .75rem;
+  }
+  .skill-category {
+    display: flex;
+    align-items: center;
+    opacity: .75;
+    font-size: .875rem;
+    font-weight: 600;
+    margin-bottom: .75rem;
+    gap: .5rem;
+  }
+  .skill-category-title {
+    margin: 0;
+  }
+  .skill-tags {
+    font-size: .875rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .skill {
+    color: color-mix(in srgb, currentColor, transparent 25%);
+    border-radius: .5rem;
+    padding: .25rem .75rem;
+    background-color: rgba(0, 0, 0, .0375);
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .photo-wrapper {
+    width: 300px;
+    height: 350px;
+    margin: 0 auto;
+    padding: 1rem 1rem 2rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .075), inset -1px -1px 0 rgba(0, 0, 0, .125);
+    transform: rotate(3deg);
+    box-sizing: border-box;
+  }
+  .photo {
+    background-color: rgba(0, 0, 0, .125);
+    border: 1px solid rgba(0, 0, 0, .025);
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  @media screen and (max-width: 1310px) {
+    .about {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .about {
+      padding-top: 2rem;
+      flex-direction: column-reverse;
+      gap: 5rem;
+    }
+    .slice {
+      width: 100%;
+    }
+    .name {
+      font-size: 2rem;
+    }
+    .photo-wrapper {
+      width: 225px;
+      height: 262px;
+    }
+    .skills-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

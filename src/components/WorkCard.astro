@@ -1,0 +1,141 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+	title: string;
+	description: string;
+  alt: string;
+  tags: string[];
+  year: string;
+  link: string;
+  imagePath: string;
+}
+
+const {
+  title = "Sample project",
+  description = "Sample description",
+  alt = "",
+  tags,
+  year,
+  link,
+  imagePath,
+} = Astro.props;
+
+let urlExternal = !link.startsWith("/works/") ? true : false;
+let urlNotEmpty = link != "" ? true : false;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/works/*.{jpeg,jpg,png,gif}');
+// if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "../assets/works/*.{jpeg,jpg,png,gif}"`);
+---
+
+<figure class="work">
+  <div class="work-image">
+    {
+      images[imagePath] ?
+      <Image src={images[imagePath]()} alt={alt} width={1280} height={720} loading="lazy"/>
+      : <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><path fill="currentColor" d="m39.197 40.965l2.67 2.669a1.25 1.25 0 0 0 1.767-1.768l-37.5-37.5a1.25 1.25 0 1 0-1.768 1.768l2.67 2.67A6.2 6.2 0 0 0 6 12.25v23.5A6.25 6.25 0 0 0 12.25 42h23.5a6.2 6.2 0 0 0 3.447-1.035m-1.83-1.83a3.7 3.7 0 0 1-1.617.365h-23.5a3.7 3.7 0 0 1-1.617-.365l12.483-12.483a1.25 1.25 0 0 1 1.766-.003zM22.383 24.15a3.7 3.7 0 0 0-1.035.733L8.865 37.367A3.7 3.7 0 0 1 8.5 35.75v-23.5c0-.579.131-1.127.365-1.617zM42 35.75q-.001.766-.176 1.478L39.5 34.904V12.25a3.75 3.75 0 0 0-3.75-3.75H13.096l-2.324-2.324A6.3 6.3 0 0 1 12.25 6h23.5A6.25 6.25 0 0 1 42 12.25zM32.5 17.5a2 2 0 1 0-4 0a2 2 0 0 0 4 0m2.5 0a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0"/></svg>
+    }
+  </div>
+  <div class="work-text-1">
+    <div class="title-container">
+      <h2>
+        {title}
+        {
+          urlExternal && urlNotEmpty ? <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.25 5C5.56 5 5 5.56 5 6.25v11.5c0 .69.56 1.25 1.25 1.25h11.5c.69 0 1.25-.56 1.25-1.25V14a1 1 0 1 1 2 0v3.75A3.25 3.25 0 0 1 17.75 21H6.25A3.25 3.25 0 0 1 3 17.75V6.25A3.25 3.25 0 0 1 6.25 3H10a1 1 0 1 1 0 2zM14 5a1 1 0 1 1 0-2h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V6.414l-4.293 4.293a1 1 0 0 1-1.414-1.414L17.586 5z"/></svg>
+          : ""
+        }
+      </h2>
+      <span>{year}</span>
+    </div>
+    <p>{description}</p>
+    <div class="work-tags">
+      {
+        tags.map((tag) => (
+          <div class="work-tag">{tag}</div>
+        ))
+      }
+    </div>
+  </div>
+</figure>
+
+<style>
+  .work {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &:hover .work-image {
+      transform: scale(1.025);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .125);
+    }
+  }
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      gap: .5rem;
+
+      svg {
+        opacity: .5;
+      }
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    span {
+      font-weight: 600;
+      padding: .25rem .75rem;
+      border-radius: .5rem;
+      background-color: rgba(0, 0, 0, .0375);
+      color: color-mix(in srgb, currentColor, transparent 25%);
+    }
+  }
+  .work p {
+    color: color-mix(in srgb, currentColor, transparent 25%);
+    margin-top: .5rem;
+  }
+  .work-image {
+    width: 100%;
+    background-color: rgba(0, 0, 0, .0375);
+    aspect-ratio: 16 / 9;
+    border-radius: .75rem;
+    overflow: hidden;
+    transition: all .25s;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &:has(svg) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    svg {
+      opacity: .5;
+    }
+  }
+  .work-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    font-size: .875rem;
+  }
+  .work-tag {
+    color: color-mix(in srgb, currentColor, transparent 25%);
+    border-radius: .5rem;
+    padding: .25rem .75rem;
+    background-color: rgba(0, 0, 0, .0375);
+    -webkit-user-select: none;
+    user-select: none;
+  }
+</style>

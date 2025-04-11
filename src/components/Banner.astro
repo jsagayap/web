@@ -1,0 +1,110 @@
+---
+import Header from "./Header.astro";
+import Button from "./Button.astro";
+---
+
+<section>
+  <div class="content">
+    <div class="content-area">
+      <Header>Hi, I'm Jade 👋</Header>
+      <p class="description">
+        A web developer and designer based in the Philippines. Sometimes, I obsess over small details but that's just me.
+        I mostly do concept designs and frontend development but cover other fields as well.
+      </p>
+      <Button href="/about" arrow={true} expand={false}>Learn more about me</Button>
+      <hr>
+      <p class="description">
+        Want to get in touch? You can reach me by email or through one of my socials.
+      </p>
+      <div class="contact">
+        <a href="mailto:mail@jsagayap.com" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.608v8.142a3.25 3.25 0 0 1-3.066 3.245L18.75 20H5.25a3.25 3.25 0 0 1-3.245-3.066L2 16.75V8.608l9.652 5.056a.75.75 0 0 0 .696 0zM5.25 4h13.5a3.25 3.25 0 0 1 3.234 2.924L12 12.154l-9.984-5.23a3.25 3.25 0 0 1 3.048-2.919zh13.5z"/></svg>
+        </a>
+        <a href="https://github.com/jsagayap" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.001 2c-5.525 0-10 4.475-10 10a9.99 9.99 0 0 0 6.837 9.488c.5.087.688-.213.688-.476c0-.237-.013-1.024-.013-1.862c-2.512.463-3.162-.612-3.362-1.175c-.113-.288-.6-1.175-1.025-1.413c-.35-.187-.85-.65-.013-.662c.788-.013 1.35.725 1.538 1.025c.9 1.512 2.337 1.087 2.912.825c.088-.65.35-1.087.638-1.337c-2.225-.25-4.55-1.113-4.55-4.938c0-1.088.387-1.987 1.025-2.687c-.1-.25-.45-1.275.1-2.65c0 0 .837-.263 2.75 1.024a9.3 9.3 0 0 1 2.5-.337c.85 0 1.7.112 2.5.337c1.913-1.3 2.75-1.024 2.75-1.024c.55 1.375.2 2.4.1 2.65c.637.7 1.025 1.587 1.025 2.687c0 3.838-2.337 4.688-4.562 4.938c.362.312.675.912.675 1.85c0 1.337-.013 2.412-.013 2.75c0 .262.188.574.688.474A10.02 10.02 0 0 0 22 12c0-5.525-4.475-10-10-10"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jsagayap/" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M18.336 18.339h-2.665v-4.177c0-.996-.02-2.278-1.39-2.278c-1.389 0-1.601 1.084-1.601 2.205v4.25h-2.666V9.75h2.56v1.17h.035c.358-.674 1.228-1.387 2.528-1.387c2.7 0 3.2 1.778 3.2 4.092v4.714M7.004 8.575a1.546 1.546 0 0 1-1.548-1.549a1.548 1.548 0 1 1 1.547 1.549m1.336 9.764H5.667V9.75H8.34zM19.67 3H4.33C3.594 3 3 3.58 3 4.297v15.406C3 20.42 3.594 21 4.328 21h15.339C20.4 21 21 20.42 21 19.703V4.297C21 3.581 20.4 3 19.666 3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background-color: rgba(68, 34, 0, .0175);
+  }
+  .content {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .content-area {
+    padding: 4rem 0 5rem;
+    box-sizing: border-box;
+  }
+  @media screen and (max-width: 1310px) {
+    .content-area {
+      width: 100%;
+      padding: 4rem 2rem 5rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .content,
+    .demo {
+      width: 100%;
+    }
+    .content-area {
+      padding: 3rem 2rem;
+    }
+  }
+  .description {
+    line-height: 1.75;
+  }
+  .contact {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0 1rem;
+
+    a {
+      color: inherit;
+      opacity: .5;
+      text-decoration: none;
+      position: relative;
+      transition: opacity .25s;
+
+      &:hover {
+        opacity: .75;
+      }
+      &::before {
+        content: attr(aria-label);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        white-space: nowrap;
+        padding: .25rem .5rem;
+        bottom: 2.5rem;
+        background-color: rgba(255, 255, 255, .5);
+        border: 1px solid rgba(0, 0, 0, .125);
+        backdrop-filter: blur(64px);
+        filter: blur(8px);
+        opacity: 0;
+        font-size: .75rem;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .075);
+        transition: all .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transform-origin: bottom center;
+      }
+      &:hover::before {
+        transform: translateX(-50%) scale(1);
+        filter: blur(0);
+        opacity: 1;
+      }
+    }
+  }
+  hr {
+    border-top: 1px solid rgba(0, 0, 0, .0375);
+    border-bottom: 0;
+    margin: 1.5rem 0;
+  }
+</style>

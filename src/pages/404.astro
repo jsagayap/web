@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Page not found" url="/404">
+  <div class="content">
+    <Header>404</Header>
+    <p>Did you type something random next to the URL for funsies? :)</p>
+    <p>If not, click the button below.</p>
+    <div class="button-wrapper">
+      <Button href="/" arrow={true} expand={false}>Go back to main page</Button>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    max-width: 1100px;
+    margin: 5rem auto;
+  }
+  .button-wrapper {
+    margin-top: 2rem;
+  }
+</style>

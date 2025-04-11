@@ -1,0 +1,87 @@
+[
+	{
+		"title": "WellFresh",
+		"description": "An online mobile application for booking dental appointments.",
+		"image": "work-wellfresh.png",
+		"alt": "Two phones showing the user interface of WellFresh mobile app.",
+		"tags": [
+			"UI/UX",
+			"Mobile",
+			"Flutter",
+			"React",
+			"Firebase"
+		],
+		"year": "2023",
+		"link": "https://github.com/aristotleBuenaventura/WellFreshUpdated"
+	},
+	{
+		"title": "Bandmate",
+		"description": "A simple applcation for tracking and organizing bands.",
+		"image": "work-bandmate.png",
+		"alt": "",
+		"tags": [
+			"UI/UX",
+			"Mobile",
+			"Flutter",
+			"SQLite"
+		],
+		"year": "2023",
+		"link": "https://github.com/jsagayap/bandmate"
+	},
+	{
+		"title": "Sportify",
+		"description": "An e-commerce and social networking site for your sporting needs.",
+		"image": "work-sportify.png",
+		"alt": "Two stacked slides showing the e-commerce and social networking parts of Sportify.",
+		"tags": [
+			"UI/UX",
+			"Web",
+			"PHP",
+			"MySQL",
+			"jQuery"
+		],
+		"year": "2022",
+		"link": ""
+	},
+	{
+		"title": "Iceketeers",
+		"description": "A mobile food ordering application for ice cream lovers.",
+		"image": "work-iceketeers.png",
+		"alt": "",
+		"tags": [
+			"UI/UX",
+			"Mobile",
+			"Ionic",
+			"Firebase"
+		],
+		"year": "2022",
+		"link": ""
+	},
+	{
+		"title": "CoffeeOS",
+		"description": "A fake operating system and desktop environment made in JavaScript.",
+		"image": "work-coffeeos.png",
+		"alt": "A screenshot of a fake desktop environment showcasing various apps.",
+		"tags": [
+			"UI/UX",
+			"Web",
+			"Personal Project"
+		],
+		"year": "2022",
+		"link": "https://coffee-os.glitch.me"
+	},
+	{
+		"title": "Gamerlab",
+		"description": "An internet cafe for gaming enthusiasts.",
+		"image": "work-gamerlab.png",
+		"alt": "A collage of social media event posters with Gamerlab logo imposed in the middle.",
+		"tags": [
+			"Branding",
+			"Social Media",
+			"Visual Identity",
+			"UI/UX"
+		],
+		"year": "2017",
+		"link": ""
+	}
+]

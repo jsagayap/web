@@ -1,0 +1,176 @@
+---
+import links from "../data/nav.json";
+
+const { current } = Astro.props;
+
+const regex = /^\/works\/.*/;
+---
+
+<header class={ regex.test(current) ? "work" : undefined }>
+  <nav class={current == "/" ? "home" : undefined}>
+    <div class="nav">
+      <a href="/" class="logo" aria-label="Home">jsagayap</a>
+      <div class="menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="nav-links">
+        {
+          links.map((l) => (
+            <a class={current == l.url ? 'active' : ''} href={l.url}>{l.title}</a>
+          ))
+        }
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .home {
+    background-color: rgba(68, 34, 0, .0175);
+  }
+  .nav {
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+    box-sizing: border-box;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+  .menu {
+    display: none;
+  }
+  @media screen and (min-width: 767px) {
+    .work {
+      position: absolute;
+      left: 0;
+      width: 100vw;
+      height: 12rem;
+      background-image: linear-gradient(rgba(64, 64, 64, .5), transparent 100%);
+      color: #fff;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .menu {
+      display: flex;
+      margin-left: auto;
+      width: 1.5rem;
+      height: 1rem;
+      position: relative;
+      cursor: pointer;
+    }
+    .menu .line {
+      width: 100%;
+      height: 2px;
+      background-color: rgba(0, 0, 0, .375);
+      position: absolute;
+      transition: all .25s;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .menu .line:nth-child(1) {
+      top: 0;
+    }
+    .menu .line:nth-child(2) {
+      top: 50%;
+    }
+    .menu .line:nth-child(3) {
+      top: 100%;
+    }
+    .menu.active .line:nth-child(1) {
+      top: 50%;
+      transform: rotate(45deg);
+    }
+    .menu.active .line:nth-child(2) {
+      background-color: transparent;
+    }
+    .menu.active .line:nth-child(3) {
+      top: 50%;
+      transform: rotate(-45deg);
+    }
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-end;
+      position: fixed;
+      top: 0;
+      right: -100vw;
+      width: 100vw;
+      height: 100vh;
+      padding: 8rem 2rem 0;
+      background-color: rgba(255, 255, 255, .5);
+      backdrop-filter: blur(0);
+      box-sizing: border-box;
+      z-index: 1;
+      transition: backdrop-filter .25s;
+    }
+    .nav-links a {
+      transform: translateY(-32px);
+      opacity: 0;
+      font-size: 2rem;
+      transition: all .35s;
+    }
+    .nav-links.active a {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .menu.active {
+      position: fixed;
+      right: 2rem;
+      z-index: 2;
+    }
+    .nav-links.active {
+      right: 0;
+      backdrop-filter: blur(64px);
+    }
+    body:has(.nav-links.active) {
+      overflow: hidden;
+    }
+  }
+  @media screen and (max-width: 1310px) {
+    .nav {
+      width: 100%;
+      padding: 2rem;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .special {
+      display: none;
+    }
+  }
+  .logo {
+    color: #7e4b61;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    position: relative;
+  }
+  .nav-links a {
+    color: color-mix(in srgb, currentColor, transparent 25%);
+    text-decoration: none;
+    transition: color .25s;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+  .nav-links a.active {
+    color: inherit;
+    font-weight: bold;
+  }
+</style>
+
+<script>
+  const menu = document.querySelector('.menu');
+  const menuList = document.querySelector('.nav-links');
+
+  menu?.addEventListener('click', () => {
+    menu.classList.toggle('active');
+    menuList?.classList.toggle('active');
+  });
+</script>
