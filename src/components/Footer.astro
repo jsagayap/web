@@ -1,5 +1,6 @@
 ---
 import Link from "./Link.astro";
+import IconLink from "./IconLink.astro";
 import links from "../data/links.json";
 ---
 
@@ -11,15 +12,10 @@ import links from "../data/links.json";
       <p>Handcrafted with <Link href="https://astro.build" bold={true}>Astro</Link>🚀</p>
     </div>
     <div class="footer-links">
-      <Link href={links["mail"].link} label={links["mail"].label}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d={links["mail"].icon}/></svg>
-      </Link>
-      <Link href={links["github"].link} label={links["github"].label}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d={links["github"].icon}/></svg>
-      </Link>
-      <Link href={links["linkedin"].link} label={links["linkedin"].label}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d={links["linkedin"].icon}/></svg>
-      </Link>
+      <IconLink data={links["email"]}></IconLink>
+      <IconLink data={links["github"]}></IconLink>
+      <IconLink data={links["bluesky"]}></IconLink>
+      <IconLink data={links["linkedin"]}></IconLink>
     </div>
   </div>
 </footer>

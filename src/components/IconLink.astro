@@ -1,0 +1,47 @@
+---
+const { data } = Astro.props;
+---
+
+<a href={data.link} aria-label={data.label}>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path fill="currentColor" d={data.icon}/>
+  </svg>
+</a>
+
+<style>
+  a {
+    color: inherit;
+    opacity: .5;
+    text-decoration: none;
+    position: relative;
+    transition: opacity .25s;
+
+    &:hover {
+      opacity: .75;
+    }
+    &::before {
+      content: attr(aria-label);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      white-space: nowrap;
+      padding: .25rem .5rem;
+      bottom: 2.5rem;
+      background-color: rgba(255, 255, 255, .5);
+      border: 1px solid rgba(0, 0, 0, .125);
+      backdrop-filter: blur(64px);
+      filter: blur(8px);
+      opacity: 0;
+      font-size: .75rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .075);
+      transition: all .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transform-origin: bottom center;
+    }
+    &:hover::before {
+      transform: translateX(-50%) scale(1);
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+</style>

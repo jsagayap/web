@@ -1,6 +1,7 @@
 ---
 import skills from "../data/skills.json";
 import Link from "./Link.astro";
+import links from "../data/links.json";
 
 type skillFormat = {
   category: string;
@@ -56,8 +57,8 @@ const skillData: skillFormat[] = skills;
       <div class="contact">
         <h2 class="subheader">Contact</h2>
         <p class="description">
-          If you have any questions or inquiries, feel free to contract me through my email <Link href="mailto:mail@jsagayap.com" bold={true}>mail@jsagayap.com</Link>
-          or chat me on <Link href="https://www.linkedin.com/in/jsagayap" bold={true}>LinkedIn.</Link>
+          If you have any questions or inquiries, feel free to contract me through my email <Link href={links["email"].link} bold={true}>mail@jsagayap.com</Link>
+          or chat me on <Link href={links["linkedin"].link} bold={true}>LinkedIn.</Link>
         </p>
       </div>
     </div>
