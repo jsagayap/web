@@ -26,12 +26,13 @@ const { href, arrow, expand } = Astro.props;
     margin: 1rem 0;
     padding: 1rem 1.5rem 1rem 1.5rem;
     border-radius: .75rem;
-    background-color: rgba(0, 0, 0, .0375);
+    background-color: rgba(68, 34, 0, .0375);
     color: inherit;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
     box-sizing: border-box;
+    transition: all .25s;
 
     &.expand {
       width: unset; 
@@ -43,7 +44,7 @@ const { href, arrow, expand } = Astro.props;
       transition: transform .25s;
     }
     &:hover {
-      background-color: rgba(0, 0, 0, .05);
+      background-color: rgba(68, 34, 0, .075);
 
       svg {
         transform: translateX(.25rem);
