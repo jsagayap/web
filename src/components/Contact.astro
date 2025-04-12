@@ -9,10 +9,10 @@ import links from "../data/links.json";
       <h1>Get in touch ✉️</h1>
       <form method="POST" action="/success" class="contact-form">
         <div class="form-control">
-          <input type="text" placeholder="Name" name="name" required>
+          <input type="text" placeholder="Name" name="name" autocomplete="false" required>
         </div>
         <div class="form-control">
-          <input type="email" placeholder="Email address" name="email" required>
+          <input type="email" placeholder="Email address" name="email" autocomplete="true" required>
         </div>
         <div class="form-control">
           <textarea placeholder="Your message" rows="5" name="message" required></textarea>
