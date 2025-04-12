@@ -50,8 +50,14 @@ const regex = /^\/works\/.*/;
     display: none;
     margin-left: auto;
     padding: .5rem .25rem;
+    border-radius: .75rem;
     position: relative;
     cursor: pointer;
+    transition: all .25s;
+
+    &:active {
+      background-color: rgba(68, 34, 0, .075);
+    }
   }
   .menu-icon {
     display: flex;
