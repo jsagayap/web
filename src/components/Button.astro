@@ -47,7 +47,14 @@ const { href, arrow, expand } = Astro.props;
       background-color: rgba(68, 34, 0, .075);
 
       svg {
-        transform: translateX(.25rem);
+        transform: translateX(.125rem);
+      }
+    }
+    &:active {
+      transform: scale(.98);
+
+      svg {
+        transform: translateX(.375rem);
       }
     }
   }
