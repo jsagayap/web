@@ -24,8 +24,7 @@
       "Git",
       "Linux",
       "WSL",
-      "Gradle",
-      "Maven",
+      "Vite",
       "Postman",
       "Lighthouse"
     ]
@@ -38,17 +37,15 @@
       "CSS",
       "JS",
       "TS",
-      "jQuery",
       "React.js",
-      "Vue.js",
-      "Astro",
-      "Svelte",
       "Flutter",
+      "Astro",
       "Ionic",
-      "Tailwind",
-      "Bootstrap",
+      "Tailwind CSS",
       "PHP",
-      "REST"
+      "Bootstrap",
+      "jQuery",
+      "REST API"
     ]
   },
   {
