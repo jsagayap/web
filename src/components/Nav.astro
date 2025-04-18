@@ -33,7 +33,7 @@ const regex = /^\/works\/.*/;
       <div class="nav-links">
         {
           links.map((l) => (
-            <a class={current == l.url ? "active" : ""} href={l.url}>
+            <a class={current == l.url ? "active" : undefined} href={l.url}>
               {l.title}
             </a>
           ))

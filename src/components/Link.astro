@@ -2,7 +2,7 @@
 const { href, label, bold } = Astro.props;
 ---
 
-<a href={href} aria-label={label} class={bold ? "bold" : ""}><slot /></a>
+<a href={href} aria-label={label} class={bold ? "bold" : undefined}><slot /></a>
 
 <style>
   a {
