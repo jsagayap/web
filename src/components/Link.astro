@@ -5,15 +5,15 @@ const { href, label, bold } = Astro.props;
 <a href={href} aria-label={label} class={bold ? "bold" : ""}><slot /></a>
 
 <style>
-	a {
-		color: inherit;
-		text-decoration: none;
+  a {
+    color: inherit;
+    text-decoration: none;
 
-		&:hover {
-			text-decoration: underline;
-		}
-		&.bold {
-			font-weight: 600;
-		}
-	}
+    &:hover {
+      text-decoration: underline;
+    }
+    &.bold {
+      font-weight: 600;
+    }
+  }
 </style>

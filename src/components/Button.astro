@@ -1,6 +1,6 @@
 ---
 interface Props {
-	href: string;
+  href: string;
   arrow: boolean;
   expand: boolean;
 }
@@ -11,11 +11,19 @@ const { href, arrow, expand } = Astro.props;
 <a href={href} class={expand ? "button expand" : "button"}>
   <slot />
   {
-    arrow ?
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-      <path fill="currentColor" d="M11.265 3.205a.75.75 0 0 0-1.03 1.09l5.239 4.955H2.75a.75.75 0 0 0 0 1.5h12.726l-5.241 4.957a.75.75 0 1 0 1.03 1.09l6.418-6.07a1 1 0 0 0 .3-.566a.75.75 0 0 0-.002-.329a1 1 0 0 0-.298-.557z"/>
-    </svg>
-    : undefined
+    arrow ? (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fill="currentColor"
+          d="M11.265 3.205a.75.75 0 0 0-1.03 1.09l5.239 4.955H2.75a.75.75 0 0 0 0 1.5h12.726l-5.241 4.957a.75.75 0 1 0 1.03 1.09l6.418-6.07a1 1 0 0 0 .3-.566a.75.75 0 0 0-.002-.329a1 1 0 0 0-.298-.557z"
+        />
+      </svg>
+    ) : undefined
   }
 </a>
 
@@ -25,36 +33,36 @@ const { href, arrow, expand } = Astro.props;
     width: fit-content;
     margin: 1rem 0;
     padding: 1rem 1.5rem 1rem 1.5rem;
-    border-radius: .75rem;
-    background-color: rgba(68, 34, 0, .0375);
+    border-radius: 0.75rem;
+    background-color: rgba(68, 34, 0, 0.0375);
     color: inherit;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
     box-sizing: border-box;
-    transition: all .25s;
+    transition: all 0.25s;
 
     &.expand {
-      width: unset; 
+      width: unset;
       justify-content: center;
       margin-top: 4rem;
     }
     svg {
       margin-left: 1rem;
-      transition: transform .25s;
+      transition: transform 0.25s;
     }
     &:hover {
-      background-color: rgba(68, 34, 0, .075);
+      background-color: rgba(68, 34, 0, 0.075);
 
       svg {
-        transform: translateX(.125rem);
+        transform: translateX(0.125rem);
       }
     }
     &:active {
-      transform: scale(.98);
+      transform: scale(0.98);
 
       svg {
-        transform: translateX(.375rem);
+        transform: translateX(0.375rem);
       }
     }
   }

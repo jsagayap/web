@@ -10,19 +10,24 @@ import links from "../data/links.json";
     <div class="content-area">
       <Header>Hi, I'm Jade 👋</Header>
       <p class="description">
-        A front-end developer with a keen focus on design based in the Philippines. Sometimes, I obsess over small details but that's just me.
-        I usually do front-end work using modern web frameworks but cover other fields as well.
+        A front-end developer with a keen focus on design based in the
+        Philippines. Sometimes, I obsess over small details but that's just me.
+        I usually do front-end work using modern web frameworks but cover other
+        fields as well.
       </p>
-      <Button href="/about" arrow={true} expand={false}>Learn more about me</Button>
-      <hr>
+      <Button href="/about" arrow={true} expand={false}
+        >Learn more about me</Button
+      >
+      <hr />
       <p class="description">
-        Want to get in touch? You can reach me by email or through one of my socials.
+        Want to get in touch? You can reach me by email or through one of my
+        socials.
       </p>
       <div class="contact">
-        <IconLink data={links["email"]}></IconLink>
-        <IconLink data={links["github"]}></IconLink>
-        <IconLink data={links["bluesky"]}></IconLink>
-        <IconLink data={links["linkedin"]}></IconLink>
+        <IconLink data={links["email"]} />
+        <IconLink data={links["github"]} />
+        <IconLink data={links["bluesky"]} />
+        <IconLink data={links["linkedin"]} />
       </div>
     </div>
   </div>
@@ -30,7 +35,7 @@ import links from "../data/links.json";
 
 <style>
   section {
-    background-color: rgba(68, 34, 0, .0175);
+    background-color: rgba(68, 34, 0, 0.0175);
   }
   .content {
     max-width: 1100px;
@@ -64,7 +69,7 @@ import links from "../data/links.json";
     margin: 2rem 0 1rem;
   }
   hr {
-    border-top: 1px solid rgba(0, 0, 0, .0375);
+    border-top: 1px solid rgba(0, 0, 0, 0.0375);
     border-bottom: 0;
     margin: 1.5rem 0;
   }

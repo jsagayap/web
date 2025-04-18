@@ -8,29 +8,31 @@ import WorkCard from "./WorkCard.astro";
     <h1>Projects</h1>
     <div class="works-area">
       {
-        works.map((work) => (
-          work.link != "" ?
-          <a href={work.link} class="work-wrapper">
-            <WorkCard
-              title={work.title}
-              description={work.description}
-              alt={work.alt}
-              tags={work.tags}
-              link={work.link}
-              imagePath={"../assets/works/" + work.image}
-            ></WorkCard>
-          </a> :
-          <div class="work-wrapper">
-            <WorkCard
-              title={work.title}
-              description={work.description}
-              alt={work.alt}
-              tags={work.tags}
-              link={work.link}
-              imagePath={"../assets/works/" + work.image}
-            ></WorkCard>
-          </div>
-        ))
+        works.map((work) =>
+          work.link != "" ? (
+            <a href={work.link} class="work-wrapper">
+              <WorkCard
+                title={work.title}
+                description={work.description}
+                alt={work.alt}
+                tags={work.tags}
+                link={work.link}
+                imagePath={"../assets/works/" + work.image}
+              />
+            </a>
+          ) : (
+            <div class="work-wrapper">
+              <WorkCard
+                title={work.title}
+                description={work.description}
+                alt={work.alt}
+                tags={work.tags}
+                link={work.link}
+                imagePath={"../assets/works/" + work.image}
+              />
+            </div>
+          )
+        )
       }
     </div>
   </div>
@@ -49,7 +51,7 @@ import WorkCard from "./WorkCard.astro";
   @media screen and (max-width: 1310px) {
     .works {
       width: 100%;
-      padding: 5rem 2rem
+      padding: 5rem 2rem;
     }
   }
   @media screen and (max-width: 768px) {

@@ -9,20 +9,24 @@ import links from "../data/links.json";
     <div class="footer-notice">
       <p>© 2025 jsagayap</p>
       <p>·</p>
-      <p>Handcrafted with <Link href="https://astro.build" bold={true}>Astro</Link>🚀</p>
+      <p>
+        Handcrafted with <Link href="https://astro.build" bold={true}
+          >Astro</Link
+        >🚀
+      </p>
     </div>
     <div class="footer-links">
-      <IconLink data={links["email"]}></IconLink>
-      <IconLink data={links["github"]}></IconLink>
-      <IconLink data={links["bluesky"]}></IconLink>
-      <IconLink data={links["linkedin"]}></IconLink>
+      <IconLink data={links["email"]} />
+      <IconLink data={links["github"]} />
+      <IconLink data={links["bluesky"]} />
+      <IconLink data={links["linkedin"]} />
     </div>
   </div>
 </footer>
 
 <style>
   footer {
-    background-color: rgba(68, 34, 0, .0175);
+    background-color: rgba(68, 34, 0, 0.0175);
   }
   .footer {
     max-width: 1100px;
@@ -31,19 +35,19 @@ import links from "../data/links.json";
     justify-content: space-between;
     margin: 0 auto;
     padding: 3rem 0;
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
   .footer-notice {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
   }
   .footer-links {
     display: flex;
     gap: 1.5rem;
   }
   p {
-    opacity: .75;
+    opacity: 0.75;
     margin: 0;
   }
   @media screen and (max-width: 1310px) {

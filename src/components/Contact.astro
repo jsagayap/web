@@ -9,13 +9,26 @@ import links from "../data/links.json";
       <h1>Get in touch ✉️</h1>
       <form method="POST" action="/success" class="contact-form">
         <div class="form-control">
-          <input type="text" placeholder="Name" name="name" autocomplete="false" required>
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            autocomplete="false"
+            required
+          />
         </div>
         <div class="form-control">
-          <input type="email" placeholder="Email address" name="email" autocomplete="true" required>
+          <input
+            type="email"
+            placeholder="Email address"
+            name="email"
+            autocomplete="true"
+            required
+          />
         </div>
         <div class="form-control">
-          <textarea placeholder="Your message" rows="5" name="message" required></textarea>
+          <textarea placeholder="Your message" rows="5" name="message" required
+          ></textarea>
         </div>
         <div class="submit-wrapper">
           <button type="submit">Send message</button>
@@ -26,20 +39,60 @@ import links from "../data/links.json";
       <h1>Links 🔗</h1>
       <div class="contact-links">
         <div class="contact-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d={links["email"].icon}/></svg>
-          <Link href={links["email"].link} label={links["email"].label} bold={false}>{links["email"].short}</Link>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            ><path fill="currentColor" d={links["email"].icon}></path></svg
+          >
+          <Link
+            href={links["email"].link}
+            label={links["email"].label}
+            bold={false}>{links["email"].short}</Link
+          >
         </div>
         <div class="contact-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d={links["github"].icon}/></svg>
-          <Link href={links["github"].link} label={links["github"].label} bold={false}>{links["github"].short}</Link>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            ><path fill="currentColor" d={links["github"].icon}></path></svg
+          >
+          <Link
+            href={links["github"].link}
+            label={links["github"].label}
+            bold={false}>{links["github"].short}</Link
+          >
         </div>
         <div class="contact-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d={links["bluesky"].icon}/></svg>
-          <Link href={links["bluesky"].link} label={links["bluesky"].label} bold={false}>{links["bluesky"].short}</Link>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            ><path fill="currentColor" d={links["bluesky"].icon}></path></svg
+          >
+          <Link
+            href={links["bluesky"].link}
+            label={links["bluesky"].label}
+            bold={false}>{links["bluesky"].short}</Link
+          >
         </div>
         <div class="contact-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d={links["linkedin"].icon}/></svg>
-          <Link href={links["linkedin"].link} label={links["linkedin"].label} bold={false}>{links["linkedin"].short}</Link>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            ><path fill="currentColor" d={links["linkedin"].icon}></path></svg
+          >
+          <Link
+            href={links["linkedin"].link}
+            label={links["linkedin"].label}
+            bold={false}>{links["linkedin"].short}</Link
+          >
         </div>
       </div>
     </div>
@@ -48,7 +101,7 @@ import links from "../data/links.json";
 
 <style>
   section {
-    background-color: rgba(68, 34, 0, .0375);
+    background-color: rgba(68, 34, 0, 0.0375);
   }
   .contact-container {
     display: flex;
@@ -61,7 +114,7 @@ import links from "../data/links.json";
     box-sizing: border-box;
 
     &:nth-child(1) {
-      border-right: 1px solid rgba(68, 34, 0, .075);
+      border-right: 1px solid rgba(68, 34, 0, 0.075);
     }
     &:nth-child(2) {
       padding: 4rem 0 4rem 4rem;
@@ -79,25 +132,27 @@ import links from "../data/links.json";
   }
   input,
   textarea {
-    background-color: rgba(68, 34, 0, .05);
+    background-color: rgba(68, 34, 0, 0.05);
     font-family: inherit;
     font-size: 1rem;
     width: 100%;
     padding: 1rem 1.25rem;
     border: 0;
-    border-radius: .75rem;
+    border-radius: 0.75rem;
     box-sizing: border-box;
     outline: 0;
-    transition: box-shadow .25s;
+    transition: box-shadow 0.25s;
 
     &:focus {
-      box-shadow: 0 0 0 2px #dab1b1, 0 0 0 4px rgba(218, 177, 177, .5);
+      box-shadow:
+        0 0 0 2px #dab1b1,
+        0 0 0 4px rgba(218, 177, 177, 0.5);
     }
     &::placeholder {
-      color: rgba(68, 34, 0, .5);
+      color: rgba(68, 34, 0, 0.5);
     }
     &:focus::placeholder {
-      color: rgba(68, 34, 0, .75);
+      color: rgba(68, 34, 0, 0.75);
     }
   }
   textarea {
@@ -108,8 +163,8 @@ import links from "../data/links.json";
     width: fit-content;
     padding: 1rem 1.5rem 1rem 1.5rem;
     border: 0;
-    border-radius: .75rem;
-    background-color: rgba(68, 34, 0, .0375);
+    border-radius: 0.75rem;
+    background-color: rgba(68, 34, 0, 0.0375);
     color: inherit;
     text-decoration: none;
     font-family: inherit;
@@ -118,7 +173,7 @@ import links from "../data/links.json";
     text-align: center;
 
     &:hover {
-      background-color: rgba(68, 34, 0, .075);
+      background-color: rgba(68, 34, 0, 0.075);
     }
   }
   .contact-links {
@@ -135,14 +190,14 @@ import links from "../data/links.json";
   .contact-link > a {
     color: inherit;
     text-decoration: none;
-    transition: opacity .25s;
+    transition: opacity 0.25s;
 
     &:hover {
-      opacity: .5;
+      opacity: 0.5;
     }
   }
   .contact-links svg {
-    opacity: .5;
+    opacity: 0.5;
   }
   @media screen and (max-width: 1310px) {
     .contact-area {
@@ -156,7 +211,7 @@ import links from "../data/links.json";
     }
     .contact-area:nth-child(1) {
       border-right: 0;
-      border-bottom: 1px solid rgba(0, 0, 0, .05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
     .contact-area:nth-child(1),
     .contact-area:nth-child(2) {
