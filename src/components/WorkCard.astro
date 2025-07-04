@@ -34,9 +34,9 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
       images[imagePath] ? (
         <Image
           src={images[imagePath]()}
-          alt={alt}
           width={1280}
           height={720}
+          alt={alt}
           loading="lazy"
         />
       ) : (

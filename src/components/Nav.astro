@@ -6,7 +6,7 @@ const { current } = Astro.props;
 const regex = /^\/works\/.*/;
 ---
 
-<header class={regex.test(current) ? "work" : undefined}>
+<header>
   <nav class={current == "/" ? "home" : undefined}>
     <div class="nav">
       <a href="/" class="logo" aria-label="Home">

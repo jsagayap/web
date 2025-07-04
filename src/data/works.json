@@ -38,7 +38,7 @@
 			"MySQL",
 			"jQuery"
 		],
-		"link": ""
+		"link": "/works/sportify"
 	},
 	{
 		"title": "Iceketeers",
@@ -51,7 +51,7 @@
 			"Ionic",
 			"Firebase"
 		],
-		"link": ""
+		"link": "/works/iceketeers"
 	},
 	{
 		"title": "CoffeeOS",
@@ -76,6 +76,6 @@
 			"Visual Identity",
 			"UI/UX"
 		],
-		"link": ""
+		"link": "/works/gamerlab"
 	}
 ]
