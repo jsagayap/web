@@ -1,8 +1,6 @@
 ---
 import Header from "./Header.astro";
 import Button from "./Button.astro";
-import IconLink from "./IconLink.astro";
-import links from "../data/links.json";
 ---
 
 <section>
@@ -18,17 +16,6 @@ import links from "../data/links.json";
       <Button href="/about" arrow={true} expand={false}
         >Learn more about me</Button
       >
-      <hr />
-      <p class="description">
-        Want to get in touch? You can reach me by email or through one of my
-        socials.
-      </p>
-      <div class="contact">
-        <IconLink data={links["email"]} />
-        <IconLink data={links["github"]} />
-        <IconLink data={links["bluesky"]} />
-        <IconLink data={links["linkedin"]} />
-      </div>
     </div>
   </div>
 </section>
@@ -62,15 +49,6 @@ import links from "../data/links.json";
   }
   .description {
     line-height: 1.75;
-  }
-  .contact {
-    display: flex;
-    gap: 1.5rem;
-    margin: 2rem 0 1rem;
-  }
-  hr {
-    border-top: 1px solid rgba(0, 0, 0, 0.0375);
-    border-bottom: 0;
-    margin: 1.5rem 0;
+    margin-bottom: 2rem;
   }
 </style>
